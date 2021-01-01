@@ -1,7 +1,7 @@
-package com.neo4j.example.springdataneo4jintroapp.controllers;
+package com.neo4j.example.movie.controllers;
 
-import com.neo4j.example.springdataneo4jintroapp.domainClasses.Person;
-import com.neo4j.example.springdataneo4jintroapp.repositories.PersonRepository;
+import com.neo4j.example.movie.domains.PersonEntity;
+import com.neo4j.example.movie.repositories.PersonRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,20 +17,20 @@ public class PersonController {
     }
 
     @GetMapping
-    public Iterable<Person> findAllPersons() { return personRepository.findAll(); }
+    public Iterable<PersonEntity> findAllPersons() { return personRepository.findAll(); }
 
     @GetMapping("/{name}")
-    public Person getPersonByName(@PathVariable String name) {
+    public PersonEntity getPersonByName(@PathVariable String name) {
         return personRepository.getPersonByName(name);
     }
 
     @GetMapping("/search/{name}")
-    public Iterable<Person> findPersonByNameLike(@PathVariable String name) {
+    public Iterable<PersonEntity> findPersonByNameLike(@PathVariable String name) {
         return personRepository.findPersonByNameLike(name);
     }
 
     @GetMapping("/actanddirect")
-    public List<Person> getPersonsWhoActAndDirect() {
+    public List<PersonEntity> getPersonsWhoActAndDirect() {
         return personRepository.getPersonsWhoActAndDirect();
     }
 }

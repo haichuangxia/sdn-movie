@@ -1,13 +1,13 @@
-package com.neo4j.example.springdataneo4jintroapp;
+package com.neo4j.example.movie;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringDataNeo4jIntroAppApplication {
+public class MovieApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringDataNeo4jIntroAppApplication.class, args);
+		SpringApplication.run(MovieApplication.class, args);
 	}
 
 }
