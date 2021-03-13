@@ -1,6 +1,6 @@
 package com.neo4j.example.movie.controllers;
 
-import com.neo4j.example.movie.domains.MovieEntity;
+import com.neo4j.example.movie.domains.nodeEntity.MovieEntity;
 import com.neo4j.example.movie.repositories.MovieRepository;
 import com.neo4j.example.movie.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;

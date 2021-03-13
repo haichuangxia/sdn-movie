@@ -1,6 +1,6 @@
 package com.neo4j.example.movie.controllers;
 
-import com.neo4j.example.movie.domains.PersonEntity;
+import com.neo4j.example.movie.domains.nodeEntity.PersonEntity;
 import com.neo4j.example.movie.repositories.PersonRepository;
 import org.springframework.web.bind.annotation.*;
 

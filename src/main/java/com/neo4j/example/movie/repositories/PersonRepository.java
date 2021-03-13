@@ -1,6 +1,6 @@
 package com.neo4j.example.movie.repositories;
 
-import com.neo4j.example.movie.domains.PersonEntity;
+import com.neo4j.example.movie.domains.nodeEntity.PersonEntity;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 
@@ -12,6 +12,9 @@ import java.util.List;
 public interface PersonRepository extends Neo4jRepository<PersonEntity, Long> {
 
     PersonEntity getPersonByName(String name);
+
+    @Override
+    Iterable<PersonEntity> findAll();
 
     Iterable<PersonEntity> findPersonByNameLike(String name);
 

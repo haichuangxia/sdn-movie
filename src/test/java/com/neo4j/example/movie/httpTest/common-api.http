@@ -1,0 +1,20 @@
+GET http://localhost:80/find/nodeByKey?keyword=The
+Accept: application/json
+
+###
+GET http://localhost:80/find/nodes?id=1
+Accept: application/json&degree
+
+###
+GET http://localhost:80/find/paths?startId=3&endId=6
+Accept: application/json
+
+###
+GET http://localhost:80/find/shortestPath?startId=3&endId=6
+Accept: application/json
+
+###
+GET http://localhost:80/show/neighbors?id=1
+Accept: application/json
+
+###

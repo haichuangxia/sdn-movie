@@ -1,39 +1,30 @@
-package com.neo4j.example.movie.pojo;
+package com.neo4j.example.movie.domains.abstractEntity;
 
-import lombok.Data;
+import com.neo4j.example.movie.domains.abstractEntity.AbstractEntity;
 import org.neo4j.driver.Value;
-import org.neo4j.ogm.annotation.Property;
-import org.springframework.data.neo4j.annotation.QueryResult;
 
 import java.util.Map;
 import java.util.function.Function;
 
 /**
- * @author qingbin 2020/12/1
- * usage
+ * @author 23860
  */
-@QueryResult
-@Data
-public class Node implements org.neo4j.driver.types.Node {
-    @Property("identity")
+public abstract class AbstractNodeEntity extends AbstractEntity {
     private Long id;
-    @Property("labels")
-    private String[] labels;
-    private Map<String, Object> properties;
 
-    @Override
-    public Iterable<String> labels() {
-        return null;
+    public AbstractNodeEntity() {
     }
 
-    @Override
-    public boolean hasLabel(String s) {
-        return false;
+    public Long getId() {
+        return id;
     }
 
-    @Override
-    public long id() {
-        return 0;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public AbstractNodeEntity(Long id) {
+        this.id = id;
     }
 
     @Override

@@ -1,16 +1,13 @@
 package com.neo4j.example.movie;
 
-import com.neo4j.example.movie.domains.AbstractNodeEntity;
-import com.neo4j.example.movie.domains.Role;
 import com.neo4j.example.movie.repositories.NodeRepository;
 import com.neo4j.example.movie.repositories.PageableRepository;
 import com.neo4j.example.movie.repositories.RelationshipRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 
+import java.util.HashMap;
 import java.util.Iterator;
 
 @SpringBootTest
@@ -36,8 +33,7 @@ class MovieApplicationTests {
 
 	@Test
 	public void getRelationship() {
-		Iterable<Role> roleIterable = relationshipRepository.getAllRelationships();
-//		if()
+		Iterable<HashMap<String,Object>> roleIterable = relationshipRepository.getAllRelationships();
 		System.out.println(relationshipRepository.getAllRelationships());
 	}
 //	@Test

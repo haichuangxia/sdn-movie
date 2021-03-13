@@ -1,6 +1,6 @@
 package com.neo4j.example.movie.service;
 
-import com.neo4j.example.movie.domains.MovieEntity;
+import com.neo4j.example.movie.domains.nodeEntity.MovieEntity;
 import com.neo4j.example.movie.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

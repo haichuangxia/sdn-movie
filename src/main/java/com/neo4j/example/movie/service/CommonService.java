@@ -1,7 +1,6 @@
 package com.neo4j.example.movie.service;
 
-import com.neo4j.example.movie.pojo.Node;
-import com.neo4j.example.movie.pojo.Paths;
+import com.neo4j.example.movie.pojo.Path;
 import com.neo4j.example.movie.repositories.NodeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,12 +20,9 @@ public class CommonService {
     @Autowired
     private NodeRepository nodeRepository;
 
-    public Paths getShortestPath(Long startId, Long endId, int hop) {
-        Paths paths = new Paths();
-        paths.setLabels(nodeRepository.getShortestPathMeta(startId, endId, hop));
-        paths.setNodes(nodeRepository.getShortestPathNodes(startId, endId, hop));
-        paths.setRelationships(nodeRepository.getShortestPathRelationships(startId, endId, hop));
-        return paths;
+    /*  查找最短路径 */
+    public List<Path> findShortestPath(Long startId, Long endId, int hop) {
+        return nodeRepository.findShortestPath(startId,endId,hop);
     }
 
     /**
@@ -36,7 +32,7 @@ public class CommonService {
      * @param property 节点的属性
      * @param keyword  关键词
      */
-    public Iterable<Node> searchNode(String label, String property, String keyword) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException {
+    public Iterable<HashMap<String, Object>> searchNode(String label, String property, String keyword) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException {
         basescql = "match(n:%s) where n.%s=\"%s\" return id(n) as id,labels(n) as type,properties(n) as properties";
         cql = String.format(basescql, label, property, keyword);
         return nodeRepository.findNodes(cql);
@@ -65,10 +61,4 @@ public class CommonService {
         return map;
     }
 
-    public HashMap<String, Object> getLabelsAndProperties() {
-        HashMap<String, Object> labelsAndPropertiesSet = new HashMap<>();
-        labelsAndPropertiesSet.put("labels", nodeRepository.getAllLabels());
-        labelsAndPropertiesSet.put("properties", nodeRepository.getPropertySet());
-        return labelsAndPropertiesSet;
-    }
 }

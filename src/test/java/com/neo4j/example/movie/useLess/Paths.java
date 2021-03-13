@@ -1,4 +1,4 @@
-package com.neo4j.example.movie.pojo;
+package com.neo4j.example.movie.useLess;
 
 import java.util.HashMap;
 import java.util.List;

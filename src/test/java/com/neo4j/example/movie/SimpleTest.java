@@ -13,10 +13,12 @@ import java.util.List;
 public class SimpleTest {
     @Test
     public void string(){
-        String v="world";
-        String k="Hello %s";
-        String result=String.format(k,v);
-        System.out.println(result);
+        String label="movie";
+        String property="title";
+        String keyword="The Matrix";
+        String basescql = "match(n:%s) where n.%s=\"%s\" return id(n) as id,labels(n) as type,properties(n) as properties";
+        String cql = String.format(basescql, label, property, keyword);
+        System.out.println(cql);
     }
     @Test
     public void session(){

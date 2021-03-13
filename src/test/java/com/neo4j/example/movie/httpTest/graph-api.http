@@ -1,0 +1,33 @@
+GET http://localhost:80/graph/labels
+Accept: application/json
+
+<> 2021-03-10T101959.200.json
+
+###
+GET http://localhost:80/graph/schema
+Accept: application/json
+
+<> 2021-03-10T102715.200.json
+
+###
+GET http://localhost:80/graph/stats
+Accept: application/json
+
+###
+GET http://localhost:80/graph/propertyKeys
+Accept: application/json
+
+###
+
+GET http://localhost:80/graph/relationships
+Accept: application/json
+
+###
+GET http://localhost:80/graph/nodes
+Accept: application/json
+
+###
+GET http://localhost:80/graph
+Accept: application/json
+
+###

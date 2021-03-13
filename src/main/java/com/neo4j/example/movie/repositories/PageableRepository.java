@@ -1,6 +1,6 @@
 package com.neo4j.example.movie.repositories;
 
-import com.neo4j.example.movie.domains.AbstractEntity;
+import com.neo4j.example.movie.domains.abstractEntity.AbstractEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -8,8 +8,6 @@ import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
-
-import java.io.Serializable;
 
 /**
  * @author qingbin 2020/12/20
